@@ -1,102 +1,78 @@
 {
-    "id": "com.greenwavesystems",
-    "name": {
-        "en": "Greenwave Systems"
-    },
-    "version": "1.0.0",
-    "compatibility": ">=0.9.2",
-    "author": {
-        "name": "Athom B.V.",
-        "email": "info@athom.com"
-    },
-    "category": [ "appliances" ],
-    "description": {
-	    "en": "Drivers for Greenwave Systems devices"
-    },
+	"id": "com.greenwavesystems",
+	"name": {
+		"en": "Greenwave Systems",
+		"nl": "Greenwave Systems"
+	},
+	"version": "1.0.0",
+	"compatibility": ">=0.9.2",
+	"author": {
+		"name": "Athom B.V.",
+		"email": "info@athom.com"
+	},
+	"contributors": {
+		"developers": [
+			{
+				"name": "Rex Markesteijn",
+				"email": "rmarkesteijn79@gmail.com"
+			},
+			{
+				"name": "Jelger Haanstra",
+				"email": "homey@solidewebservices.com"
+			}
+		]
+	},
+	"category": [ "appliances" ],
+	"description": {
+		"en": "Drivers for Greenwave Systems devices",
+		"nl": "Drivers voor Greenwave Systems apparaten"
+	},
 	"images": {
 		"large": "/assets/images/large.jpg",
 		"small": "/assets/images/small.jpg"
 	},
-    "drivers": [
-	    {
-		    "id": "powernode-6",
-		    "name": {
-			    "en": "Greenwave PowerNode 6"
-		    },
-			"icon": "/drivers/powernode-6/assets/icon.svg",
+	"drivers": [
+		{
+			"id": "powernode-1",
+			"name": {
+				"en": "Greenwave PowerNode 1",
+				"nl": "Greenwave PowerNode 1"
+			},
+			"icon": "/drivers/powernode-1/assets/icon.svg",
 			"images": {
-				"large": "/drivers/powernode-6/assets/images/large.jpg",
-				"small": "/drivers/powernode-6/assets/images/small.jpg"
+					"large": "/drivers/powernode-1/assets/images/large.jpg",
+					"small": "/drivers/powernode-1/assets/images/small.jpg"
 			},
-		    "class": "socket",
-		    "capabilities": [ "onoff", "meter_power" ],
-		    "images": {
-			    "large": "/drivers/powernode-6/assets/images/large.jpg",
-			    "small": "/drivers/powernode-6/assets/images/small.jpg"
+			"class": "socket",
+			"capabilities": ["onoff", "meter_power"],
+			"images": {
+				"large": "/drivers/powernode-1/assets/images/large.jpg",
+				"small": "/drivers/powernode-1/assets/images/small.jpg"
 			},
-		    "zwave": {
-			    "manufacturerId": 153,
-			    "productTypeId": 3,
-			    "productId": 4,
-			    "learnmode": {
-				    "image": "/drivers/powernode-6/assets/learnmode.svg",
-				    "instruction": {
-					    "en": "Press the small button on your Greenwave PowerNode",
-					    "nl": "Druk op de kleine knop op de Greenwave PowerNode"
-				    }
+			"zwave": {
+				"manufacturerId": 153,
+				"productTypeId": 2,
+				"productId": 2,
+				"learnmode": {
+					"image": "/drivers/powernode-1/assets/learnmode.svg",
+					"instruction": {
+						"en": "Press the small button on your Greenwave PowerNode",
+						"nl": "Druk op de kleine knop op de Greenwave PowerNode"
+					}
 				},
-			    "associationGroups": [ 1 ],
-			    "multiChannelNodes": {
-				    "1": {
-					    "class": "socket",
-					    "capabilities": [ "onoff", "meter_power" ],
-					    "icon": "/drivers/powernode-6/assets/icon-1.svg",
-					    "name": {
-						    "en": "Greenwave PowerNode 1"
+				"associationGroups": [ 1 ],
+				"singleChannelNode": {
+					"1": {
+						"class": "socket",
+						"capabilities": ["onoff", "meter_power"],
+						"icon": "/drivers/powernode-1/assets/icon.svg",
+						"name": {
+							"en": "Greenwave PowerNode 1",
+							"nl": "Greenwave PowerNode 1"
 						}
-				    },
-				    "2": {
-					    "class": "socket",
-					    "capabilities": [ "onoff", "meter_power" ],
-					    "icon": "/drivers/powernode-6/assets/icon-2.svg",
-					    "name": {
-						    "en": "Greenwave PowerNode 2"
-						}
-				    },
-				    "3": {
-					    "class": "socket",
-					    "capabilities": [ "onoff", "meter_power" ],
-					    "icon": "/drivers/powernode-6/assets/icon-3.svg",
-					    "name": {
-						    "en": "Greenwave PowerNode 3"
-						}
-				    },
-				    "4": {
-					    "class": "socket",
-					    "capabilities": [ "onoff", "meter_power" ],
-					    "icon": "/drivers/powernode-6/assets/icon-4.svg",
-					    "name": {
-						    "en": "Greenwave PowerNode 4"
-						}
-				    },
-				    "5": {
-					    "class": "socket",
-					    "capabilities": [ "onoff", "meter_power" ],
-					    "icon": "/drivers/powernode-6/assets/icon-5.svg",
-					    "name": {
-						    "en": "Greenwave PowerNode 5"
-						}
-				    },
-				    "6": {
-					    "class": "socket",
-					    "capabilities": [ "onoff", "meter_power" ],
-					    "icon": "/drivers/powernode-6/assets/icon-6.svg",
-					    "name": {
-						    "en": "Greenwave PowerNode 6"
-						}
-				    }
-			    }
-		    },
+					}
+				}
+			},
 			"settings": [
 				{
 					"id": "poll_interval",
@@ -107,10 +83,152 @@
 					},
 					"value": 120,
 					"label": {
-						"en": "Poll Interval (s)"
+						"en": "Poll Interval",
+						"nl": "Poll Interval"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update."
+						"en": "The amount of seconds between asking the device for a status update.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+					}
+				},
+				{
+					"id": "keep_alive_time",
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 255
+					},
+					"value": 2,
+					"label": {
+						"en": "Keep Alive Time",
+						"nl": "Keep Alive Time"
+					},
+					"hint": {
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
+					}
+				}
+			]
+		},
+		{
+			"id": "powernode-6",
+			"name": {
+				"en": "Greenwave PowerNode 6",
+				"nl": "Greenwave PowerNode 6"
+			},
+			"icon": "/drivers/powernode-6/assets/icon.svg",
+			"images": {
+				"large": "/drivers/powernode-6/assets/images/large.jpg",
+				"small": "/drivers/powernode-6/assets/images/small.jpg"
+			},
+			"class": "socket",
+			"capabilities": [ "onoff", "meter_power" ],
+			"images": {
+				"large": "/drivers/powernode-6/assets/images/large.jpg",
+				"small": "/drivers/powernode-6/assets/images/small.jpg"
+			},
+			"zwave": {
+				"manufacturerId": 153,
+				"productTypeId": 3,
+				"productId": 4,
+				"learnmode": {
+					"image": "/drivers/powernode-6/assets/learnmode.svg",
+					"instruction": {
+						"en": "Press the small button on your Greenwave PowerNode",
+						"nl": "Druk op de kleine knop op de Greenwave PowerNode"
+					}
+				},
+				"associationGroups": [ 1 ],
+				"multiChannelNodes": {
+					"1": {
+						"class": "socket",
+						"capabilities": [ "onoff", "meter_power" ],
+						"icon": "/drivers/powernode-6/assets/icon-1.svg",
+						"name": {
+							"en": "Greenwave PowerNode 1",
+							"nl": "Greenwave PowerNode 1"
+						}
+					},
+					"2": {
+						"class": "socket",
+						"capabilities": [ "onoff", "meter_power" ],
+						"icon": "/drivers/powernode-6/assets/icon-2.svg",
+						"name": {
+							"en": "Greenwave PowerNode 2",
+							"nl": "Greenwave PowerNode 2"
+						}
+					},
+					"3": {
+						"class": "socket",
+						"capabilities": [ "onoff", "meter_power" ],
+						"icon": "/drivers/powernode-6/assets/icon-3.svg",
+						"name": {
+							"en": "Greenwave PowerNode 3",
+							"nl": "Greenwave PowerNode 3"
+						}
+					},
+					"4": {
+						"class": "socket",
+						"capabilities": [ "onoff", "meter_power" ],
+						"icon": "/drivers/powernode-6/assets/icon-4.svg",
+						"name": {
+							"en": "Greenwave PowerNode 4",
+							"nl": "Greenwave PowerNode 4"
+						}
+					},
+					"5": {
+						"class": "socket",
+						"capabilities": [ "onoff", "meter_power" ],
+						"icon": "/drivers/powernode-6/assets/icon-5.svg",
+						"name": {
+							"en": "Greenwave PowerNode 5",
+							"nl": "Greenwave PowerNode 5"
+						}
+					},
+					"6": {
+						"class": "socket",
+						"capabilities": [ "onoff", "meter_power" ],
+						"icon": "/drivers/powernode-6/assets/icon-6.svg",
+						"name": {
+							"en": "Greenwave PowerNode 6",
+							"nl": "Greenwave PowerNode 6"
+						}
+					}
+				}
+			},
+			"settings": [
+				{
+					"id": "poll_interval",
+					"type": "number",
+					"attr": {
+						"min": 60,
+						"max": 3600
+					},
+					"value": 120,
+					"label": {
+						"en": "Poll Interval",
+						"nl": "Poll Interval"
+					},
+					"hint": {
+						"en": "The amount of seconds between asking the device for a status update.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+					}
+				},
+				{
+					"id": "keep_alive_time",
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 255
+					},
+					"value": 2,
+					"label": {
+						"en": "Keep Alive Time",
+						"nl": "Keep Alive Time"
+					},
+					"hint": {
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
 					}
 				}
 			]

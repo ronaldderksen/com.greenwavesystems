@@ -1,6 +1,6 @@
 "use strict";
 
-const path			= require('path');
+const path				= require('path');
 const ZwaveDriver	= require('homey-zwavedriver');
 
 // http://www.pepper1.net/zwavedb/device/280
@@ -28,7 +28,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 			'command_class'				: 'COMMAND_CLASS_METER',
 			'command_get'					: 'METER_GET',
 			'command_get_cb'			: false,
-			'command_get_parser'	: function() {
+			'command_get_parser'	: function(power) {
 				return {
 					'Properties1': {
 						'Scale': 0
@@ -46,7 +46,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 		"keep_alive_time": {
 			"index": 1,
 			"size": 1,
-			"parser": function(input) {
+			"parser": function( input ) {
 				return new Buffer([parseInt(input)]);
 			}
 		}
