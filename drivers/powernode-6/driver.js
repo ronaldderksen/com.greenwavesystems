@@ -24,7 +24,32 @@ module.exports = new ZwaveDriver( path.basename(__dirname), {
 			},
 			'pollInterval': "poll_interval"
 		},
-		'meter_power': {
+		'measure_power':
+			{
+			'command_class'				: 'COMMAND_CLASS_METER',
+			'command_get'				: 'METER_GET',
+			'command_get_cb'			: false,
+			'command_get_parser'		: function(){
+				return {
+					'Properties1': {
+						'Scale': 2
+					}
+				}
+			},
+			'command_report'			: 'METER_REPORT',
+			'command_report_parser'        : function( report ) {
+					 if(report.hasOwnProperty('Properties2')
+							 && report.Properties2.hasOwnProperty('Scale')
+							 && report.Properties2['Scale'] === 2) {
+
+							 return report['Meter Value (Parsed)'];
+					 } else return null;
+			 },
+			'pollInterval': "poll_interval"
+			},
+
+		'meter_power':
+			{
 			'command_class'				: 'COMMAND_CLASS_METER',
 			'command_get'				: 'METER_GET',
 			'command_get_cb'			: false,
@@ -36,11 +61,17 @@ module.exports = new ZwaveDriver( path.basename(__dirname), {
 				}
 			},
 			'command_report'			: 'METER_REPORT',
-			'command_report_parser'		: function( report ) {
-				return report['Meter Value (Parsed)'];
-			},
+			'command_report_parser'        : function( report ) {
+					 if(report.hasOwnProperty('Properties2')
+							 && report.Properties2.hasOwnProperty('Scale')
+							 && report.Properties2['Scale'] === 0) {
+
+							 return report['Meter Value (Parsed)'];
+					 } else return null;
+			 },
 			'pollInterval': "poll_interval"
 		}
 	},
-	settings: {}
+	settings: {
+	}
 })
