@@ -28,7 +28,7 @@ module.exports = new ZwaveDriver( path.basename(__dirname), {
 			'command_class'				: 'COMMAND_CLASS_METER',
 			'command_get'				: 'METER_GET',
 			'command_get_cb'			: false,
-			'command_get_parser'		: function(){
+			'command_get_parser'		: function() {
 				return {
 					'Properties1': {
 						'Scale': 2
@@ -72,10 +72,7 @@ module.exports = new ZwaveDriver( path.basename(__dirname), {
 	settings: {
 		"keep_alive_time": {
 			"index": 1,
-			"size": 1,
-			"parser": function( input ) {
-				return new Buffer([parseInt(input)]);
-			}
+			"size": 1
 		}
 	}
 });
