@@ -72,10 +72,7 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 	settings: {
 		"keep_alive_time": {
 			"index": 1,
-			"size": 1,
-			"parser": function (input) {
-				return new Buffer([parseInt(input)]);
-			}
+			"size": 1
 		}
 	}
 });
