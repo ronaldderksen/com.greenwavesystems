@@ -67,7 +67,7 @@
 					}
 				},
 				"associationGroups": [
-					1
+					1, 3
 				],
 				"singleChannelNode": {
 					"1": {
@@ -155,7 +155,7 @@
 					}
 				},
 				"associationGroups": [
-					1
+					1, 3
 				],
 				"multiChannelNodes": {
 					"1": {
