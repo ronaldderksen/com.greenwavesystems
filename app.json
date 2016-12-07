@@ -76,22 +76,7 @@
 						"size": 1,
 						"value": 255
 					}
-				],
-				"singleChannelNode": {
-					"1": {
-						"class": "socket",
-						"capabilities": [
-							"onoff",
-							"measure_power",
-							"meter_power"
-						],
-						"icon": "/drivers/powernode-1/assets/icon.svg",
-						"name": {
-							"en": "Greenwave PowerNode 1",
-							"nl": "Greenwave PowerNode 1"
-						}
-					}
-				}
+				]
 			},
 			"settings": [
 				{
