@@ -19,6 +19,10 @@
 			{
 				"name": "Jelger Haanstra",
 				"email": "homey@solidewebservices.com"
+			},
+			{
+				"name": "Ted Tolboom",
+				"email": "dTNL.Homey@gmail.com"
 			}
 		]
 	},
@@ -111,6 +115,55 @@
 					"hint": {
 						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
 						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
+					}
+				},
+				{
+					"id": "State_power_loss",
+					"type": "dropdown",
+					"label": {
+						"en": "State after power loss",
+						"nl": "Toestand na stroomuitval"
+					},
+					"value": "2",
+					"hint": {
+						"en": "State after power loss, 0 = all off, 1 = remember last state, 2 = all on, default: all on",
+						"nl": "Toestand na stroom uitval, 0 = allemaal uit, 1 = herinner laatste toestand, 2 = allemaal aan, standaard: allemaal aan"
+					},
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "All OFF",
+								"nl": "Allemaal UIT"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "Remember last state",
+								"nl": "Herinner laatste toestand"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "All ON (default)",
+								"nl": "Allemaal AAN (standaard)"
+							}
+						}
+					]
+				},
+				{
+					"id": "LED_network",
+					"type": "checkbox",
+					"label": {
+						"en": "LED network status",
+						"nl": "LED network status"
+					},
+					"value": true,
+					"hint": {
+						"en": "Led for network error, checked = enabled, unchecked = disable, default enabled",
+						"nl": "Led indicatie voor netwerk fouten, aangevinkt = Led knippert bij Z-wave netwerk fouten, niet aangevinkt = Led uitgeschakeld, standaard: ingeschakeld"
 					}
 				}
 			]
@@ -266,6 +319,55 @@
 					"hint": {
 						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
 						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
+					}
+				},
+				{
+					"id": "State_power_loss",
+					"type": "dropdown",
+					"label": {
+						"en": "State after power loss",
+						"nl": "Toestand na stroomuitval"
+					},
+					"value": "2",
+					"hint": {
+						"en": "State after power loss, 0 = all off, 1 = remember last state, 2 = all on, default: all on",
+						"nl": "Toestand na stroom uitval, 0 = allemaal uit, 1 = herinner laatste toestand, 2 = allemaal aan, standaard: allemaal aan"
+					},
+					"values": [
+						{
+							"id": "0",
+							"label": {
+								"en": "All OFF",
+								"nl": "Allemaal UIT"
+							}
+						},
+						{
+							"id": "1",
+							"label": {
+								"en": "Remember last state",
+								"nl": "Herinner laatste toestand"
+							}
+						},
+						{
+							"id": "2",
+							"label": {
+								"en": "All ON (default)",
+								"nl": "Allemaal AAN (standaard)"
+							}
+						}
+					]
+				},
+				{
+					"id": "LED_network",
+					"type": "checkbox",
+					"label": {
+						"en": "LED network status",
+						"nl": "LED network status"
+					},
+					"value": true,
+					"hint": {
+						"en": "Led for network error, checked = enabled, unchecked = disable, default enabled",
+						"nl": "Led indicatie voor netwerk fouten, aangevinkt = Led knippert bij Z-wave netwerk fouten, niet aangevinkt = Led uitgeschakeld, standaard: ingeschakeld"
 					}
 				}
 			]
