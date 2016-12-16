@@ -125,8 +125,8 @@
 					},
 					"value": 300,
 					"label": {
-						"en": "Poll Interval",
-						"nl": "Poll Interval"
+						"en": "Polling Interval",
+						"nl": "Polling Interval"
 					},
 					"hint": {
 						"en": "The amount of seconds between asking the device for a status update.",
@@ -143,7 +143,7 @@
 					"value": 255,
 					"label": {
 						"en": "Keep Alive Time",
-						"nl": "Keep Alive Time"
+						"nl": "Keep Alive Time "
 					},
 					"hint": {
 						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
