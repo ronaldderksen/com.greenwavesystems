@@ -94,7 +94,7 @@
 						"id": 4,
 						"size": 1,
 						"value": true
-					},
+					}
 					
 				]
 			},
@@ -257,7 +257,7 @@
 						"id": 4,
 						"size": 1,
 						"value": true
-					},
+					}
 				],
 				"multiChannelNodes": {
 					"1": {
