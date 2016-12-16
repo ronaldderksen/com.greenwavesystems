@@ -92,8 +92,8 @@
 					},
 					{
 						"id": 4, // LED_network
-						"size": true,
-						"value": 255
+						"size": 1,
+						"value": true
 					},
 					
 				]
@@ -255,8 +255,8 @@
 					},
 					{
 						"id": 4, // LED_network
-						"size": true,
-						"value": 255
+						"size": 1,
+						"value": true
 					},
 				],
 				"multiChannelNodes": {
