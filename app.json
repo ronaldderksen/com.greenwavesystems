@@ -76,18 +76,51 @@
 				],
 				"defaultConfiguration": [
 					{
-						"id": "keep_alive_time",
+						"id": 0, // power_change_percentage
+						"size": 1,
+						"value": 80
+					},
+					{
+						"id": 1, // keep_alive_time
 						"size": 1,
 						"value": 255
-					}
+					},
+					{
+						"id": 3, // State_power_loss
+						"size": 1,
+						"value": 2
+					},
+					{
+						"id": 4, // LED_network
+						"size": true,
+						"value": 255
+					},
+					
 				]
 			},
 			"settings": [
-				{
+					{
+					"id": "power_change_percentage",
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 100
+					},
+					"value": 80,
+					"label": {
+						"en": "Power change for update",
+						"nl": "Wijziging in energie voor update"
+					},
+					"hint": {
+						"en": "Power change required to send an update to controller, in % from 1 to 100.",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100."
+					}
+					},
+					{
 					"id": "poll_interval",
 					"type": "number",
 					"attr": {
-						"min": 60,
+						"min": 0,
 						"max": 3600
 					},
 					"value": 300,
@@ -126,8 +159,8 @@
 					},
 					"value": "2",
 					"hint": {
-						"en": "State after power loss, 0 = all off, 1 = remember last state, 2 = all on, default: all on",
-						"nl": "Toestand na stroom uitval, 0 = allemaal uit, 1 = herinner laatste toestand, 2 = allemaal aan, standaard: allemaal aan"
+						"en": "State after power loss, 0 = ALL OFF, 1 = remember last state, 2 = ALL ON, default: all on",
+						"nl": "Toestand na stroom uitval, 0 = ALLEN UIT, 1 = herinner laatste toestand, 2 = ALLEN AAN, standaard: allemaal aan"
 					},
 					"values": [
 						{
@@ -162,7 +195,7 @@
 					},
 					"value": true,
 					"hint": {
-						"en": "Led for network error, checked = enabled, unchecked = disable, default enabled",
+						"en": "Led for network error, checked = LED starts blinking with Z-wave network errors, unchecked = LED disabled, default: enabled",
 						"nl": "Led indicatie voor netwerk fouten, aangevinkt = Led knippert bij Z-wave netwerk fouten, niet aangevinkt = Led uitgeschakeld, standaard: ingeschakeld"
 					}
 				}
@@ -206,10 +239,25 @@
 				],
 				"defaultConfiguration": [
 					{
-						"id": "keep_alive_time",
+						"id": 0, // power_change_percentage
+						"size": 1,
+						"value": 80
+					},
+					{
+						"id": 1, // keep_alive_time
 						"size": 1,
 						"value": 255
-					}
+					},
+					{
+						"id": 3, // State_power_loss
+						"size": 1,
+						"value": 2
+					},
+					{
+						"id": 4, // LED_network
+						"size": true,
+						"value": 255
+					},
 				],
 				"multiChannelNodes": {
 					"1": {
@@ -288,6 +336,23 @@
 			},
 			"settings": [
 				{
+					"id": "power_change_percentage",
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 100
+					},
+					"value": 80,
+					"label": {
+						"en": "Power change for update",
+						"nl": "Wijziging in energie voor update"
+					},
+					"hint": {
+						"en": "Power change required to send an update to controller, in % from 1 to 100.",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100."
+					}
+					},
+					{
 					"id": "poll_interval",
 					"type": "number",
 					"attr": {
@@ -330,8 +395,8 @@
 					},
 					"value": "2",
 					"hint": {
-						"en": "State after power loss, 0 = all off, 1 = remember last state, 2 = all on, default: all on",
-						"nl": "Toestand na stroom uitval, 0 = allemaal uit, 1 = herinner laatste toestand, 2 = allemaal aan, standaard: allemaal aan"
+						"en": "State after power loss, 0 = ALL OFF, 1 = remember last state, 2 = ALL ON, default: all on",
+						"nl": "Toestand na stroom uitval, 0 = ALLEN UIT, 1 = herinner laatste toestand, 2 = ALLEN AAN, standaard: allemaal aan"
 					},
 					"values": [
 						{
@@ -366,7 +431,7 @@
 					},
 					"value": true,
 					"hint": {
-						"en": "Led for network error, checked = enabled, unchecked = disable, default enabled",
+						"en": "Led for network error, checked = LED starts blinking with Z-wave network errors, unchecked = LED disabled, default: enabled",
 						"nl": "Led indicatie voor netwerk fouten, aangevinkt = Led knippert bij Z-wave netwerk fouten, niet aangevinkt = Led uitgeschakeld, standaard: ingeschakeld"
 					}
 				}
