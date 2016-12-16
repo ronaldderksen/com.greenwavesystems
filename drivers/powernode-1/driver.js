@@ -70,6 +70,10 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 		}
 	},
 	settings: {
+		"power_change_percentage": {
+			"index": 0,
+			"size": 1,
+		},
 		"keep_alive_time": {
 			"index": 1,
 			"size": 1,
