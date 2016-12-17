@@ -6,6 +6,7 @@ const ZwaveDriver = require('homey-zwavedriver');
 // http://www.pepper1.net/zwavedb/device/280
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
+	debug: true,
 	capabilities: {
 		'onoff': {
 			'command_class': 'COMMAND_CLASS_SWITCH_BINARY',
