@@ -76,25 +76,15 @@
 				],
 				"defaultConfiguration": [
 					{
-						"id": "power_change_percentage",
+						"id": 0,
 						"size": 1,
 						"value": 80
 					},
 					{
-						"id": "keep_alive_time",
+						"id": 1,
 						"size": 1,
-						"value": 255
-					},
-					{
-						"id": "State_power_loss",
-						"size": 1,
-						"value": 2
-					},
-					{
-						"id": "LED_network",
-						"size": 1,
-						"value": 1
-					}	
+						"value": 120
+					}
 				]
 			},
 			"settings": [
@@ -111,8 +101,8 @@
 						"nl": "Wijziging in energie voor update"
 					},
 					"hint": {
-						"en": "Power change required to send an update to controller, in % from 1 to 100.",
-						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100."
+						"en": "Power change required to send an update to controller, in % from 1 to 100, default: 80 [%].",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100, standaard: 80 [%].."
 					}
 					},
 					{
@@ -124,12 +114,12 @@
 					},
 					"value": 300,
 					"label": {
-						"en": "Polling Interval",
-						"nl": "Polling Interval"
+						"en": "Poll Interval",
+						"nl": "Poll Interval"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update.",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
 					}
 				},
 				{
@@ -139,63 +129,14 @@
 						"min": 1,
 						"max": 255
 					},
-					"value": 255,
+					"value": 120,
 					"label": {
 						"en": "Keep Alive Time",
-						"nl": "Keep Alive Time "
+						"nl": "Keep Alive Time"
 					},
 					"hint": {
-						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
-						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
-					}
-				},
-				{
-					"id": "State_power_loss",
-					"type": "dropdown",
-					"label": {
-						"en": "State after power loss",
-						"nl": "Toestand na stroomuitval"
-					},
-					"value": "2",
-					"hint": {
-						"en": "State after power loss, 0 = ALL OFF, 1 = remember last state, 2 = ALL ON, default: all on",
-						"nl": "Toestand na stroom uitval, 0 = ALLEN UIT, 1 = herinner laatste toestand, 2 = ALLEN AAN, standaard: allemaal aan"
-					},
-					"values": [
-						{
-							"id": "0",
-							"label": {
-								"en": "All OFF",
-								"nl": "Allemaal UIT"
-							}
-						},
-						{
-							"id": "1",
-							"label": {
-								"en": "Remember last state",
-								"nl": "Herinner laatste toestand"
-							}
-						},
-						{
-							"id": "2",
-							"label": {
-								"en": "All ON (default)",
-								"nl": "Allemaal AAN (standaard)"
-							}
-						}
-					]
-				},
-				{
-					"id": "LED_network",
-					"type": "checkbox",
-					"label": {
-						"en": "LED network status",
-						"nl": "LED network status"
-					},
-					"value": true,
-					"hint": {
-						"en": "Led for network error, checked = LED starts blinking with Z-wave network errors, unchecked = LED disabled, default: enabled",
-						"nl": "Led indicatie voor netwerk fouten, aangevinkt = Led knippert bij Z-wave netwerk fouten, niet aangevinkt = Led uitgeschakeld, standaard: ingeschakeld"
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen, standaard: 255 [min]."
 					}
 				}
 			]
@@ -238,25 +179,15 @@
 				],
 				"defaultConfiguration": [
 					{
-						"id": "power_change_percentage",
+						"id": 0,
 						"size": 1,
 						"value": 80
 					},
 					{
-						"id": "keep_alive_time",
+						"id": 1,
 						"size": 1,
-						"value": 255
-					},
-					{
-						"id": "State_power_loss",
-						"size": 1,
-						"value": 2
-					},
-					{
-						"id": "LED_network",
-						"size": 1,
-						"value": 1
-					}	
+						"value": 120
+					}
 				],
 				"multiChannelNodes": {
 					"1": {
@@ -334,7 +265,7 @@
 				}
 			},
 			"settings": [
-				{
+					{
 					"id": "power_change_percentage",
 					"type": "number",
 					"attr": {
@@ -347,8 +278,8 @@
 						"nl": "Wijziging in energie voor update"
 					},
 					"hint": {
-						"en": "Power change required to send an update to controller, in % from 1 to 100.",
-						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100."
+						"en": "Power change required to send an update to controller, in % from 1 to 100, default: 80 [%].",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100, standaard: 80 [%].."
 					}
 					},
 					{
@@ -364,8 +295,8 @@
 						"nl": "Poll Interval"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update.",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
 					}
 				},
 				{
@@ -375,63 +306,14 @@
 						"min": 1,
 						"max": 255
 					},
-					"value": 255,
+					"value": 120,
 					"label": {
 						"en": "Keep Alive Time",
 						"nl": "Keep Alive Time"
 					},
 					"hint": {
-						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
-						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
-					}
-				},
-				{
-					"id": "State_power_loss",
-					"type": "dropdown",
-					"label": {
-						"en": "State after power loss",
-						"nl": "Toestand na stroomuitval"
-					},
-					"value": "2",
-					"hint": {
-						"en": "State after power loss, 0 = ALL OFF, 1 = remember last state, 2 = ALL ON, default: all on",
-						"nl": "Toestand na stroom uitval, 0 = ALLEN UIT, 1 = herinner laatste toestand, 2 = ALLEN AAN, standaard: allemaal aan"
-					},
-					"values": [
-						{
-							"id": "0",
-							"label": {
-								"en": "All OFF",
-								"nl": "Allemaal UIT"
-							}
-						},
-						{
-							"id": "1",
-							"label": {
-								"en": "Remember last state",
-								"nl": "Herinner laatste toestand"
-							}
-						},
-						{
-							"id": "2",
-							"label": {
-								"en": "All ON (default)",
-								"nl": "Allemaal AAN (standaard)"
-							}
-						}
-					]
-				},
-				{
-					"id": "LED_network",
-					"type": "checkbox",
-					"label": {
-						"en": "LED network status",
-						"nl": "LED network status"
-					},
-					"value": true,
-					"hint": {
-						"en": "Led for network error, checked = LED starts blinking with Z-wave network errors, unchecked = LED disabled, default: enabled",
-						"nl": "Led indicatie voor netwerk fouten, aangevinkt = Led knippert bij Z-wave netwerk fouten, niet aangevinkt = Led uitgeschakeld, standaard: ingeschakeld"
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen, standaard: 255 [min]."
 					}
 				}
 			]
