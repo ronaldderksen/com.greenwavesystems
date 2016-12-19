@@ -19,6 +19,10 @@
 			{
 				"name": "Jelger Haanstra",
 				"email": "homey@solidewebservices.com"
+			},
+			{
+				"name": "Ted Tolboom",
+				"email": "dTNL.Homey@gmail.com"
 			}
 		]
 	},
@@ -72,18 +76,40 @@
 				],
 				"defaultConfiguration": [
 					{
-						"id": "keep_alive_time",
+						"id": 0,
 						"size": 1,
-						"value": 255
+						"value": 80
+					},
+					{
+						"id": 1,
+						"size": 1,
+						"value": 120
 					}
 				]
 			},
 			"settings": [
-				{
+					{
+					"id": "power_change_percentage",
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 100
+					},
+					"value": 80,
+					"label": {
+						"en": "Power change for update",
+						"nl": "Wijziging in energie voor update"
+					},
+					"hint": {
+						"en": "Power change required to send an update to controller, in % from 1 to 100, default: 80 [%].",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100, standaard: 80 [%].."
+					}
+					},
+					{
 					"id": "poll_interval",
 					"type": "number",
 					"attr": {
-						"min": 60,
+						"min": 0,
 						"max": 3600
 					},
 					"value": 300,
@@ -92,8 +118,8 @@
 						"nl": "Poll Interval"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update.",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
 					}
 				},
 				{
@@ -103,14 +129,14 @@
 						"min": 1,
 						"max": 255
 					},
-					"value": 255,
+					"value": 120,
 					"label": {
 						"en": "Keep Alive Time",
 						"nl": "Keep Alive Time"
 					},
 					"hint": {
-						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
-						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen, standaard: 255 [min]."
 					}
 				}
 			]
@@ -153,9 +179,14 @@
 				],
 				"defaultConfiguration": [
 					{
-						"id": "keep_alive_time",
+						"id": 0,
 						"size": 1,
-						"value": 255
+						"value": 80
+					},
+					{
+						"id": 1,
+						"size": 1,
+						"value": 120
 					}
 				],
 				"multiChannelNodes": {
@@ -234,7 +265,24 @@
 				}
 			},
 			"settings": [
-				{
+					{
+					"id": "power_change_percentage",
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 100
+					},
+					"value": 80,
+					"label": {
+						"en": "Power change for update",
+						"nl": "Wijziging in energie voor update"
+					},
+					"hint": {
+						"en": "Power change required to send an update to controller, in % from 1 to 100, default: 80 [%].",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100, standaard: 80 [%].."
+					}
+					},
+					{
 					"id": "poll_interval",
 					"type": "number",
 					"attr": {
@@ -247,8 +295,8 @@
 						"nl": "Poll Interval"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update.",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
 					}
 				},
 				{
@@ -258,14 +306,14 @@
 						"min": 1,
 						"max": 255
 					},
-					"value": 255,
+					"value": 120,
 					"label": {
 						"en": "Keep Alive Time",
 						"nl": "Keep Alive Time"
 					},
 					"hint": {
-						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
-						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen, standaard: 255 [min]."
 					}
 				}
 			]

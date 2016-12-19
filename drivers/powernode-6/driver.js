@@ -6,6 +6,7 @@ const ZwaveDriver = require('homey-zwavedriver');
 // http://www.pepper1.net/zwavedb/device/280
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
+	debug: true,
 	capabilities: {
 		'onoff': {
 			'command_class': 'COMMAND_CLASS_SWITCH_BINARY',
@@ -70,6 +71,10 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 		}
 	},
 	settings: {
+		"power_change_percentage": {
+			"index": 0,
+			"size": 1,
+		},
 		"keep_alive_time": {
 			"index": 1,
 			"size": 1,
@@ -78,6 +83,20 @@ module.exports = new ZwaveDriver(path.basename(__dirname), {
 				newValue.writeUIntBE(Number(input), 0, 1);
 				return newValue;
 			}
+		},
+		"State_power_loss": {
+			"index": 3,
+			"size": 1,
+			"parser": input => {
+				const newValue = new Buffer(1);
+				newValue.writeUIntBE(Number(input), 0, 1);
+				return newValue;
+			}
+		},
+		"LED_network": {
+			"index": 4,
+			"size": 1,
+			"parser": value => new Buffer([ (value === true) ? 1 : 0 ])
 		}
 	}
 });
