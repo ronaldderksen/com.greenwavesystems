@@ -83,8 +83,8 @@
 					},
 				"2": {
 					"hint": {
-						"en": "Reports alarm report when detecting current leakage and powers off relay if an association relationship exists. (not implemented yet)",
-						"nl": "Rapportage van een alarm op het moment dat een lekstroom gedetecteerd wordt op een relay. (niet geïmplementeerd)"
+						"en": "Reports alarm report when detecting current leakage of defined relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+						"nl": "Rapportage van een alarm op het moment dat een lekstroom gedetecteerd wordt op een gekoppelds apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
 						}
 					},
 				"3": {
@@ -95,8 +95,8 @@
 					},
 				"4": {
 					"hint": {
-						"en": "Reports alarm when the powernode is in over-current protection (not implemented yet)",
-						"nl": "Alarm reportage wanneer de powernode in over-current protectie overschakeld (niet geïmplementeerd)"
+						"en": "Reports alarm when the powernode is in over-current protection and powers off a relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+						"nl": "Alarm reportage wanneer de powernode in over-current protectie overschakeld en automatische uitschakeling van het gekoppelde apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
 						}
 					}
 				},
@@ -212,8 +212,8 @@
 					},
 				"2": {
 					"hint": {
-						"en": "Reports alarm report when detecting current leakage and powers off relay if an association relationship exists. (not implemented yet)",
-						"nl": "Rapportage van een alarm op het moment dat een lekstroom gedetecteerd wordt op een relay. (niet geïmplementeerd)"
+						"en": "Reports alarm report when detecting current leakage of defined relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+						"nl": "Rapportage van een alarm op het moment dat een lekstroom gedetecteerd wordt op een gekoppelds apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
 						}
 					},
 				"3": {
@@ -224,8 +224,8 @@
 					},
 				"4": {
 					"hint": {
-						"en": "Reports alarm when the powernode is in over-current protection (not implemented yet)",
-						"nl": "Alarm reportage wanneer de powernode in over-current protectie overschakeld (niet geïmplementeerd)"
+						"en": "Reports alarm when the powernode is in over-current protection and powers off a relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+						"nl": "Alarm reportage wanneer de powernode in over-current protectie overschakeld en automatische uitschakeling van het gekoppelde apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
 						}
 					}
 				},
