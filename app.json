@@ -78,7 +78,7 @@
 				"1": {
 					"hint": {
 						"en": "Reports the device status and allows control (ON/OFF) over the powernode (Homey's ID by default). It is not recommended to change this group.",
-						"nl": "Rapportage van de status van de powernode en staat controle (AAN/UIT) over de powernode toe (Homey's ID als standaard waarde). Het is niet aanbevolen om deze group aan te passen."
+						"nl": "Rapportage van de status van de powernode en staat controle (AAN/UIT) over de powernode toe (Homey's ID als standaard waarde). Het is niet aanbevolen om deze groep aan te passen."
 						}
 					},
 				"2": {
@@ -90,7 +90,7 @@
 				"3": {
 					"hint": {
 						"en": "Reports the power value change if the difference of the instant power reading compared to previous report is larger than the 'Power change for update' parameter set (e.g. 80%). (Homey's ID by default)",
-						"nl": "Rapportage van de gebruikte energie wanneer het verschil met de vorige rapportage groter is dan de waarde ingesteld bij 'Wijziging in energie voor update' (bv. 80%). (Homey's ID als standaard waarde)"
+						"nl": "Rapportage van de gebruikte energie wanneer het verschil met de vorige rapportage groter is dan de waarde ingesteld bij 'Wijziging in energie voor update' parameter (bv. 80%). (Homey's ID als standaard waarde)"
 						}
 					},
 				"4": {
@@ -207,7 +207,7 @@
 				"1": {
 					"hint": {
 						"en": "Reports the device status and allows control (ON/OFF) over the powernode (Homey's ID by default). It is not recommended to change this group.",
-						"nl": "Rapportage van de status van de powernode en staat controle (AAN/UIT) over de powernode toe (Homey's ID als standaard waarde). Het is niet aanbevolen om deze group aan te passen."
+						"nl": "Rapportage van de status van de powernode en staat controle (AAN/UIT) over de powernode toe (Homey's ID als standaard waarde). Het is niet aanbevolen om deze groep aan te passen."
 						}
 					},
 				"2": {
@@ -219,7 +219,7 @@
 				"3": {
 					"hint": {
 						"en": "Reports the power value change if the difference of the instant power reading compared to previous report is larger than the 'Power change for update' parameter set (e.g. 80%). (Homey's ID by default)",
-						"nl": "Rapportage van de gebruikte energie wanneer het verschil met de vorige rapportage groter is dan de waarde ingesteld bij 'Wijziging in energie voor update' (bv. 80%). (Homey's ID als standaard waarde)"
+						"nl": "Rapportage van de gebruikte energie wanneer het verschil met de vorige rapportage groter is dan de waarde ingesteld bij 'Wijziging in energie voor update' parameter (bv. 80%). (Homey's ID als standaard waarde)"
 						}
 					},
 				"4": {
