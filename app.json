@@ -4,8 +4,8 @@
 		"en": "Greenwave Systems",
 		"nl": "Greenwave Systems"
 	},
-	"version": "1.0.8",
-	"compatibility": ">=0.9.2",
+	"version": "1.0.10",
+	"compatibility": ">=1.0.5",
 	"author": {
 		"name": "Athom B.V.",
 		"email": "info@athom.com"
@@ -19,6 +19,10 @@
 			{
 				"name": "Jelger Haanstra",
 				"email": "homey@solidewebservices.com"
+			},
+			{
+				"name": "Ted Tolboom",
+				"email": "dTNL.Homey@gmail.com"
 			}
 		]
 	},
@@ -70,15 +74,80 @@
 					1,
 					3
 				],
+				"associationGroupsOptions": {
+					"1": {
+						"hint": {
+							"en": "Reports the device status and allows control (ON/OFF) over the powernode (Homey ID by default). It is not recommended to change this group.",
+							"nl": "Rapportage van de status van de powernode en staat controle (AAN/UIT) over de powernode toe (Homey ID als standaard waarde). Het is niet aanbevolen om deze groep aan te passen."
+						}
+					},
+					"2": {
+						"hint": {
+							"en": "Reports alarm report when detecting current leakage of defined relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+							"nl": "Rapportage van een alarm op het moment dat een lekstroom gedetecteerd wordt op een gekoppelds apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
+						}
+					},
+					"3": {
+						"hint": {
+							"en": "Reports the power value change if the difference of the instant power reading compared to previous report is larger than the -Power change for update- parameter set (e.g. 80%). (Homey ID by default)",
+							"nl": "Rapportage van de gebruikte energie wanneer het verschil met de vorige rapportage groter is dan de waarde ingesteld bij -Wijziging in energie voor update- parameter (bv. 80%). (Homey ID als standaard waarde)"
+						}
+					},
+					"4": {
+						"hint": {
+							"en": "Reports alarm when the powernode is in over-current protection and powers off a relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+							"nl": "Alarm reportage wanneer de powernode in over-current protectie overschakeld en automatische uitschakeling van het gekoppelde apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
+						}
+					}
+				},
 				"defaultConfiguration": [
 					{
-						"id": "keep_alive_time",
+						"id": 0,
 						"size": 1,
-						"value": 255
+						"value": 80
+					},
+					{
+						"id": 1,
+						"size": 1,
+						"value": "0xFF"
 					}
 				]
 			},
 			"settings": [
+				{
+					"id": 0,
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 100
+					},
+					"value": 80,
+					"label": {
+						"en": "Power change for update",
+						"nl": "Wijziging in energie voor update"
+					},
+					"hint": {
+						"en": "Power change required to send an update to controller, in % from 1 to 100, default: 80 [%].",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100, standaard: 80 [%].."
+					}
+				},
+				{
+					"id": 1,
+					"type": "number",
+					"attr": {
+						"min": 1,
+						"max": 255
+					},
+					"value": 255,
+					"label": {
+						"en": "Keep Alive Time",
+						"nl": "Keep Alive Time"
+					},
+					"hint": {
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen, standaard: 255 [min]."
+					}
+				},
 				{
 					"id": "poll_interval",
 					"type": "number",
@@ -92,25 +161,8 @@
 						"nl": "Poll Interval"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update.",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
-					}
-				},
-				{
-					"id": "keep_alive_time",
-					"type": "number",
-					"attr": {
-						"min": 1,
-						"max": 255
-					},
-					"value": 255,
-					"label": {
-						"en": "Keep Alive Time",
-						"nl": "Keep Alive Time"
-					},
-					"hint": {
-						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
-						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
+						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
 					}
 				}
 			]
@@ -151,11 +203,42 @@
 					1,
 					3
 				],
+				"associationGroupsOptions": {
+					"1": {
+						"hint": {
+							"en": "Reports the device status and allows control (ON/OFF) over the powernode (Homey ID by default). It is not recommended to change this group.",
+							"nl": "Rapportage van de status van de powernode en staat controle (AAN/UIT) over de powernode toe (Homey ID als standaard waarde). Het is niet aanbevolen om deze groep aan te passen."
+						}
+					},
+					"2": {
+						"hint": {
+							"en": "Reports alarm report when detecting current leakage of defined relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+							"nl": "Rapportage van een alarm op het moment dat een lekstroom gedetecteerd wordt op een gekoppelds apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
+						}
+					},
+					"3": {
+						"hint": {
+							"en": "Reports the power value change if the difference of the instant power reading compared to previous report is larger than the -Power change for update- parameter set (e.g. 80%). (Homey ID by default)",
+							"nl": "Rapportage van de gebruikte energie wanneer het verschil met de vorige rapportage groter is dan de waarde ingesteld bij -Wijziging in energie voor update- parameter (bv. 80%). (Homey ID als standaard waarde)"
+						}
+					},
+					"4": {
+						"hint": {
+							"en": "Reports alarm when the powernode is in over-current protection and powers off a relay device if an association relationship has been defined (add Z-wave ID of relay device).",
+							"nl": "Alarm reportage wanneer de powernode in over-current protectie overschakeld en automatische uitschakeling van het gekoppelde apparaat indien een relatie gedefineerd is (voeg het Z-wave ID van het te koppelen apparaat toe)."
+						}
+					}
+				},
 				"defaultConfiguration": [
 					{
-						"id": "keep_alive_time",
+						"id": 0,
 						"size": 1,
-						"value": 255
+						"value": 80
+					},
+					{
+						"id": 1,
+						"size": 1,
+						"value": "0xFF"
 					}
 				],
 				"multiChannelNodes": {
@@ -235,24 +318,24 @@
 			},
 			"settings": [
 				{
-					"id": "poll_interval",
+					"id": 0,
 					"type": "number",
 					"attr": {
-						"min": 0,
-						"max": 3600
+						"min": 1,
+						"max": 100
 					},
-					"value": 300,
+					"value": 80,
 					"label": {
-						"en": "Poll Interval",
-						"nl": "Poll Interval"
+						"en": "Power change for update",
+						"nl": "Wijziging in energie voor update"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update.",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat."
+						"en": "Power change required to send an update to controller, in % from 1 to 100, default: 80 [%].",
+						"nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100, standaard: 80 [%].."
 					}
 				},
 				{
-					"id": "keep_alive_time",
+					"id": 1,
 					"type": "number",
 					"attr": {
 						"min": 1,
@@ -264,8 +347,25 @@
 						"nl": "Keep Alive Time"
 					},
 					"hint": {
-						"en": "The amount of minutes without contact between controller and device before the device starts blinking green.",
-						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen."
+						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
+						"nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen, standaard: 255 [min]."
+					}
+				},
+				{
+					"id": "poll_interval",
+					"type": "number",
+					"attr": {
+						"min": 60,
+						"max": 3600
+					},
+					"value": 300,
+					"label": {
+						"en": "Poll Interval",
+						"nl": "Poll Interval"
+					},
+					"hint": {
+						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
 					}
 				}
 			]
