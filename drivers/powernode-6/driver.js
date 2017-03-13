@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const path = require('path');
 const ZwaveDriver = require('homey-zwavedriver');
@@ -6,78 +6,92 @@ const ZwaveDriver = require('homey-zwavedriver');
 // http://www.pepper1.net/zwavedb/device/280
 
 module.exports = new ZwaveDriver(path.basename(__dirname), {
+	debug: false,
 	capabilities: {
-		'onoff': {
-			'command_class': 'COMMAND_CLASS_SWITCH_BINARY',
-			'command_get': 'SWITCH_BINARY_GET',
-			'command_get_cb': false,
-			'command_set': 'SWITCH_BINARY_SET',
-			'command_set_parser': function (value) {
-				return {
-					'Switch Value': value
-				}
-			},
-			'command_report': 'SWITCH_BINARY_REPORT',
-			'command_report_parser': function (report) {
-				return report['Value'] === 'on/enable';
-			},
-			'pollInterval': "poll_interval"
+		onoff: {
+			command_class: 'COMMAND_CLASS_SWITCH_BINARY',
+			command_get: 'SWITCH_BINARY_GET',
+			command_get_cb: false,
+			command_set: 'SWITCH_BINARY_SET',
+			command_set_parser: value => ({
+				'Switch Value': value,
+			}),
+			command_report: 'SWITCH_BINARY_REPORT',
+			command_report_parser: report => report.Value === 'on/enable',
+			pollInterval: 'poll_interval_onoff',
 		},
-		'measure_power': {
-			'command_class': 'COMMAND_CLASS_METER',
-			'command_get': 'METER_GET',
-			'command_get_cb': false,
-			'command_get_parser': function () {
-				return {
-					'Properties1': {
-						'Scale': 2
-					}
-				}
-			},
-			'command_report': 'METER_REPORT',
-			'command_report_parser': function (report) {
-				if (report && report.hasOwnProperty('Properties2')
-					&& report.Properties2.hasOwnProperty('Scale')
-					&& report.Properties2['Scale'] === 2) {
-
+		measure_power: {
+			command_class: 'COMMAND_CLASS_METER',
+			command_get: 'METER_GET',
+			command_get_cb: false,
+			command_get_parser: () => ({
+				Properties1: {
+					Scale: 2,
+				},
+			}),
+			command_report: 'METER_REPORT',
+			command_report_parser: report => {
+				if (report.hasOwnProperty('Properties2') &&
+					report.Properties2.hasOwnProperty('Scale') &&
+					report.Properties2.Scale === 2) {
 					return report['Meter Value (Parsed)'];
-				} else return null;
+				}
+
+				return null;
 			},
-			'pollInterval': "poll_interval"
+			pollInterval: 'poll_interval_meter',
 		},
 
-		'meter_power': {
-			'command_class': 'COMMAND_CLASS_METER',
-			'command_get': 'METER_GET',
-			'command_get_cb': false,
-			'command_get_parser': function () {
-				return {
-					'Properties1': {
-						'Scale': 0
-					}
-				}
-			},
-			'command_report': 'METER_REPORT',
-			'command_report_parser': function (report) {
-				if (report && report.hasOwnProperty('Properties2')
-					&& report.Properties2.hasOwnProperty('Scale')
-					&& report.Properties2['Scale'] === 0) {
-
+		meter_power: {
+			command_class: 'COMMAND_CLASS_METER',
+			command_get: 'METER_GET',
+			command_get_cb: false,
+			command_get_parser: () => ({
+				Properties1: {
+					Scale: 0,
+				},
+			}),
+			command_report: 'METER_REPORT',
+			command_report_parser: report => {
+				if (report.hasOwnProperty('Properties2') &&
+					report.Properties2.hasOwnProperty('Scale') &&
+					report.Properties2.Scale === 0) {
 					return report['Meter Value (Parsed)'];
-				} else return null;
+				}
+
+				return null;
 			},
-			'pollInterval': "poll_interval"
-		}
+			pollInterval: 'poll_interval_measure',
+		},
 	},
 	settings: {
 		0: {
-			"index": 0,
-			"size": 1,
+			index: 0,
+			size: 1,
 		},
 		1: {
-			"index": 1,
-			"size": 1,
-			"signed": false,
-		}
-	}
+			index: 1,
+			size: 1,
+			signed: false,
+		},
+	},
+});
+
+Homey.manager('flow').on('action.PN6_reset_meter', (callback, args) => {
+	const node = module.exports.nodes[args.device.token];
+
+	if (node &&
+		node.instance.CommandClass.COMMAND_CLASS_METER) {
+		node.instance.CommandClass.COMMAND_CLASS_METER.METER_RESET({}, (err, result) => {
+			if (err) return callback(err);
+
+			// If properly transmitted, change the setting and finish flow card
+			if (result === 'TRANSMIT_COMPLETE_OK') {
+
+				return callback(null, true);
+			}
+
+			return callback('unknown_response');
+		});
+	} else return callback('unknown_error');
 });
