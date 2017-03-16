@@ -12,7 +12,7 @@ This app adds support for devices made by [Greenwave Systems](http://www.greenwa
 
 ## Changelog:
 
-### v1.1.0
+### v1.1.0 - (re-pair of devices is needed)
 **update:**
 
 All devices - add ability to differentiate polling interval for all capabilities    
