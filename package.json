@@ -1,0 +1,25 @@
+{
+  "name": "com.greenwavesystems",
+  "version": "1.0.0",
+  "description": "This app adds support for devices made by [Greenwave Systems](http://www.greenwavesystems.com).",
+  "main": "app.js",
+  "dependencies": {
+    "homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git",
+    "homey-log": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "homeyConfig compose && athom project --run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athombv/com.greenwavesystems.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athombv/com.greenwavesystems/issues"
+  },
+  "homepage": "https://github.com/athombv/com.greenwavesystems#readme"
+}

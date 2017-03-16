@@ -4,14 +4,15 @@
 		"en": "Greenwave Systems",
 		"nl": "Greenwave Systems"
 	},
-	"version": "1.0.10",
+	"version": "1.1.0",
 	"compatibility": ">=1.0.5",
 	"author": {
 		"name": "Athom B.V.",
 		"email": "info@athom.com"
 	},
 	"contributors": {
-		"developers": [{
+		"developers": [
+			{
 				"name": "Rex Markesteijn",
 				"email": "rmarkesteijn79@gmail.com"
 			},
@@ -26,7 +27,8 @@
 		]
 	},
 	"flow": {
-		"actions": [{
+		"actions": [
+			{
 				"id": "PN1_reset_meter",
 				"title": {
 					"en": "Reset meter values",
@@ -34,13 +36,15 @@
 				},
 				"hint": {
 					"en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-					"nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan gemaakt worden. "
+					"nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
 				},
-				"args": [{
-					"name": "device",
-					"type": "device",
-					"filter": "driver_id=powernode-1"
-				}]
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=powernode-1"
+					}
+				]
 			},
 			{
 				"id": "PN6_reset_meter",
@@ -50,13 +54,15 @@
 				},
 				"hint": {
 					"en": "Reset the accumulated power usage (kWh). Can not be reversed.",
-					"nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan gemaakt worden. "
+					"nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan worden gemaakt."
 				},
-				"args": [{
-					"name": "device",
-					"type": "device",
-					"filter": "driver_id=powernode-6"
-				}]
+				"args": [
+					{
+						"name": "device",
+						"type": "device",
+						"filter": "driver_id=powernode-6"
+					}
+				]
 			}
 		]
 	},
@@ -71,7 +77,8 @@
 		"large": "/assets/images/large.jpg",
 		"small": "/assets/images/small.jpg"
 	},
-	"drivers": [{
+	"drivers": [
+		{
 			"id": "powernode-1",
 			"name": {
 				"en": "Greenwave PowerNode 1",
@@ -88,10 +95,6 @@
 				"measure_power",
 				"meter_power"
 			],
-			"images": {
-				"large": "/drivers/powernode-1/assets/images/large.jpg",
-				"small": "/drivers/powernode-1/assets/images/small.jpg"
-			},
 			"zwave": {
 				"manufacturerId": 153,
 				"productTypeId": 2,
@@ -133,7 +136,8 @@
 						}
 					}
 				},
-				"defaultConfiguration": [{
+				"defaultConfiguration": [
+					{
 						"id": 0,
 						"size": 1,
 						"value": 80
@@ -145,7 +149,8 @@
 					}
 				]
 			},
-			"settings": [{
+			"settings": [
+				{
 					"id": 0,
 					"type": "number",
 					"attr": {
@@ -171,8 +176,8 @@
 					},
 					"value": 255,
 					"label": {
-						"en": "Keep Alive Time",
-						"nl": "Keep Alive Time"
+						"en": "Keep alive time",
+						"nl": "Keep alive time"
 					},
 					"hint": {
 						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
@@ -188,12 +193,12 @@
 					},
 					"value": 300,
 					"label": {
-						"en": "Poll Interval On/Off",
-						"nl": "Poll Interval On/Off"
+						"en": "Poll interval on/off",
+						"nl": "Poll interval on/off"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 300 seconds.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 300 seconden."
 					}
 				},
 				{
@@ -203,14 +208,14 @@
 						"min": 0,
 						"max": 7200
 					},
-					"value": 300,
+					"value": 330,
 					"label": {
-						"en": "Poll Interval Measure (W)",
-						"nl": "Poll Interval Measure (W)"
+						"en": "Poll interval measure (W)",
+						"nl": "Poll interval measure (W)"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 330 seconds.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 330 seconden."
 					}
 				},
 				{
@@ -220,14 +225,14 @@
 						"min": 0,
 						"max": 7200
 					},
-					"value": 300,
+					"value": 360,
 					"label": {
-						"en": "Poll Interval Meter (kWh)",
-						"nl": "Poll Interval Meter (kWh)"
+						"en": "Poll interval meter (kWh)",
+						"nl": "Poll interval meter (kWh)"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 360 seconds.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 360 seconden."
 					}
 				}
 			]
@@ -249,10 +254,6 @@
 				"measure_power",
 				"meter_power"
 			],
-			"images": {
-				"large": "/drivers/powernode-6/assets/images/large.jpg",
-				"small": "/drivers/powernode-6/assets/images/small.jpg"
-			},
 			"zwave": {
 				"manufacturerId": 153,
 				"productTypeId": 3,
@@ -294,7 +295,8 @@
 						}
 					}
 				},
-				"defaultConfiguration": [{
+				"defaultConfiguration": [
+					{
 						"id": 0,
 						"size": 1,
 						"value": 80
@@ -380,7 +382,8 @@
 					}
 				}
 			},
-			"settings": [{
+			"settings": [
+				{
 					"id": 0,
 					"type": "number",
 					"attr": {
@@ -406,8 +409,8 @@
 					},
 					"value": 255,
 					"label": {
-						"en": "Keep Alive Time",
-						"nl": "Keep Alive Time"
+						"en": "Keep alive time",
+						"nl": "Keep alive time"
 					},
 					"hint": {
 						"en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
@@ -423,12 +426,12 @@
 					},
 					"value": 300,
 					"label": {
-						"en": "Poll Interval On/Off",
-						"nl": "Poll Interval On/Off"
+						"en": "Poll interval on/off",
+						"nl": "Poll interval on/off"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 300 seconds.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 300 seconden."
 					}
 				},
 				{
@@ -438,14 +441,14 @@
 						"min": 0,
 						"max": 7200
 					},
-					"value": 300,
+					"value": 330,
 					"label": {
-						"en": "Poll Interval Measure (W)",
-						"nl": "Poll Interval Measure (W)"
+						"en": "Poll interval measure (W)",
+						"nl": "Poll interval measure (W)"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 330 seconds.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 330 seconden."
 					}
 				},
 				{
@@ -455,14 +458,14 @@
 						"min": 0,
 						"max": 7200
 					},
-					"value": 300,
+					"value": 360,
 					"label": {
-						"en": "Poll Interval Meter (kWh)",
-						"nl": "Poll Interval Meter (kWh)"
+						"en": "Poll interval meter (kWh)",
+						"nl": "Poll interval meter (kWh)"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 360 seconds.",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 360 seconden."
 					}
 				}
 			]

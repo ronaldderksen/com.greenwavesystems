@@ -10,10 +10,11 @@ This app adds support for devices made by [Greenwave Systems](http://www.greenwa
 * English
 * Dutch
 
-## Change Log:
+## Changelog:
 
-### v 1.2.0
+### v1.1.0
 **update:**
+
 All devices - add ability to differentiate polling interval for all capabilities    
-All devices - add Power Meter reset flow card  
-All devices - update Z-wave driver (1.1.7), code clean-up, minor fixes   
+All devices - add power meter reset flow card  
+All devices - update z-wave driver (1.1.8), code clean-up, minor fixes   
