@@ -11,8 +11,7 @@
 		"email": "info@athom.com"
 	},
 	"contributors": {
-		"developers": [
-			{
+		"developers": [{
 				"name": "Rex Markesteijn",
 				"email": "rmarkesteijn79@gmail.com"
 			},
@@ -23,6 +22,41 @@
 			{
 				"name": "Ted Tolboom",
 				"email": "dTNL.Homey@gmail.com"
+			}
+		]
+	},
+	"flow": {
+		"actions": [{
+				"id": "PN1_reset_meter",
+				"title": {
+					"en": "Reset meter values",
+					"nl": "Meter waarden resetten"
+				},
+				"hint": {
+					"en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+					"nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan gemaakt worden. "
+				},
+				"args": [{
+					"name": "device",
+					"type": "device",
+					"filter": "driver_id=powernode-1"
+				}]
+			},
+			{
+				"id": "PN6_reset_meter",
+				"title": {
+					"en": "Reset meter values",
+					"nl": "Meter waarden resetten"
+				},
+				"hint": {
+					"en": "Reset the accumulated power usage (kWh). Can not be reversed.",
+					"nl": "Reset de stroomverbruik (kWh) waarden. Kan niet ongedaan gemaakt worden. "
+				},
+				"args": [{
+					"name": "device",
+					"type": "device",
+					"filter": "driver_id=powernode-6"
+				}]
 			}
 		]
 	},
@@ -37,8 +71,7 @@
 		"large": "/assets/images/large.jpg",
 		"small": "/assets/images/small.jpg"
 	},
-	"drivers": [
-		{
+	"drivers": [{
 			"id": "powernode-1",
 			"name": {
 				"en": "Greenwave PowerNode 1",
@@ -100,8 +133,7 @@
 						}
 					}
 				},
-				"defaultConfiguration": [
-					{
+				"defaultConfiguration": [{
 						"id": 0,
 						"size": 1,
 						"value": 80
@@ -113,8 +145,7 @@
 					}
 				]
 			},
-			"settings": [
-				{
+			"settings": [{
 					"id": 0,
 					"type": "number",
 					"attr": {
@@ -149,20 +180,54 @@
 					}
 				},
 				{
-					"id": "poll_interval",
+					"id": "poll_interval_onoff",
 					"type": "number",
 					"attr": {
-						"min": 60,
-						"max": 3600
+						"min": 0,
+						"max": 7200
 					},
 					"value": 300,
 					"label": {
-						"en": "Poll Interval",
-						"nl": "Poll Interval"
+						"en": "Poll Interval On/Off",
+						"nl": "Poll Interval On/Off"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+					}
+				},
+				{
+					"id": "poll_interval_measure",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 7200
+					},
+					"value": 300,
+					"label": {
+						"en": "Poll Interval Measure (W)",
+						"nl": "Poll Interval Measure (W)"
+					},
+					"hint": {
+						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+					}
+				},
+				{
+					"id": "poll_interval_meter",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 7200
+					},
+					"value": 300,
+					"label": {
+						"en": "Poll Interval Meter (kWh)",
+						"nl": "Poll Interval Meter (kWh)"
+					},
+					"hint": {
+						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
 					}
 				}
 			]
@@ -229,8 +294,7 @@
 						}
 					}
 				},
-				"defaultConfiguration": [
-					{
+				"defaultConfiguration": [{
 						"id": 0,
 						"size": 1,
 						"value": 80
@@ -316,8 +380,7 @@
 					}
 				}
 			},
-			"settings": [
-				{
+			"settings": [{
 					"id": 0,
 					"type": "number",
 					"attr": {
@@ -352,20 +415,54 @@
 					}
 				},
 				{
-					"id": "poll_interval",
+					"id": "poll_interval_onoff",
 					"type": "number",
 					"attr": {
-						"min": 60,
-						"max": 3600
+						"min": 0,
+						"max": 7200
 					},
 					"value": 300,
 					"label": {
-						"en": "Poll Interval",
-						"nl": "Poll Interval"
+						"en": "Poll Interval On/Off",
+						"nl": "Poll Interval On/Off"
 					},
 					"hint": {
-						"en": "The amount of seconds between asking the device for a status update, default: 300 [s].",
-						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, standaard: 300 [s]."
+						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+					}
+				},
+				{
+					"id": "poll_interval_measure",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 7200
+					},
+					"value": 300,
+					"label": {
+						"en": "Poll Interval Measure (W)",
+						"nl": "Poll Interval Measure (W)"
+					},
+					"hint": {
+						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
+					}
+				},
+				{
+					"id": "poll_interval_meter",
+					"type": "number",
+					"attr": {
+						"min": 0,
+						"max": 7200
+					},
+					"value": 300,
+					"label": {
+						"en": "Poll Interval Meter (kWh)",
+						"nl": "Poll Interval Meter (kWh)"
+					},
+					"hint": {
+						"en": "The amount of seconds between asking the device for a status update, \nrange: 0 - 7200\n0: polling disabled \ndefault: 300 [s].",
+						"nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, \nbereik: 0 - 7200 \n0: polling uitgeschakeld \nstandaard: 300 [s]."
 					}
 				}
 			]
