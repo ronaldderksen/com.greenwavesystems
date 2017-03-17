@@ -4,8 +4,8 @@
   "description": "This app adds support for devices made by [Greenwave Systems](http://www.greenwavesystems.com).",
   "main": "app.js",
   "dependencies": {
-    "homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git",
-    "homey-log": "^1.0.1"
+    "homey-log": "^1.0.1",
+    "homey-zwavedriver": "git+https://github.com/athombv/node-homey-zwavedriver.git"
   },
   "devDependencies": {},
   "scripts": {
