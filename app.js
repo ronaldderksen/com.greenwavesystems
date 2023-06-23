@@ -1,7 +1,16 @@
 'use strict';
 
-const Log = require('homey-log').Log;
+const Homey = require('homey');
 
-module.exports.init = () => {
-	console.log(`${Homey.manifest.id} running...`);
-};
+class MyApp extends Homey.App {
+
+  /**
+   * onInit is called when the app is initialized.
+   */
+  async onInit() {
+    this.log('Greenwavesystems has been initialized');
+  }
+
+}
+
+module.exports = MyApp;

@@ -1,0 +1,88 @@
+[
+  {
+    "id": 0,
+    "type": "number",
+    "attr": {
+      "min": 1,
+      "max": 100
+    },
+    "value": 80,
+    "label": {
+      "en": "Power change for update",
+      "nl": "Wijziging in energie voor update"
+    },
+    "hint": {
+      "en": "Power change required to send an update to controller, in % from 1 to 100, default: 80 [%].",
+      "nl": "Wijziging in energie voordat er een update naar de controller wordt gestuurd, in % van 1 tot 100, standaard: 80 [%].."
+    }
+  },
+  {
+    "id": 1,
+    "type": "number",
+    "attr": {
+      "min": 1,
+      "max": 255
+    },
+    "value": 255,
+    "label": {
+      "en": "Keep alive time",
+      "nl": "Keep alive time"
+    },
+    "hint": {
+      "en": "The amount of minutes without contact between controller and device before the device starts blinking green, default: 255 [min].",
+      "nl": "Aantal minuten zonder contact tussen controller en apparaat voordat het apparaat groen gaat knipperen, standaard: 255 [min]."
+    }
+  },
+  {
+    "id": "poll_interval_onoff",
+    "type": "number",
+    "attr": {
+      "min": 0,
+      "max": 7200
+    },
+    "value": 300,
+    "label": {
+      "en": "Poll interval on/off",
+      "nl": "Poll interval on/off"
+    },
+    "hint": {
+      "en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 300 seconds.",
+      "nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 300 seconden."
+    }
+  },
+  {
+    "id": "poll_interval_measure",
+    "type": "number",
+    "unitunits": { "en": "seconds" },
+    "attr": {
+      "min": 0,
+      "max": 7200
+    },
+    "value": 300,
+    "label": {
+      "en": "Poll interval measure (W)",
+      "nl": "Poll interval measure (W)"
+    },
+    "hint": {
+      "en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 300 seconds.",
+      "nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 300 seconden."
+    }
+  },
+  {
+    "id": "poll_interval_meter",
+    "type": "number",
+    "attr": {
+      "min": 0,
+      "max": 7200
+    },
+    "value": 300,
+    "label": {
+      "en": "Poll interval meter (kWh)",
+      "nl": "Poll interval meter (kWh)"
+    },
+    "hint": {
+      "en": "The amount of seconds between asking the device for a status update, 0 will disable polling.\nRange: 0 - 7200.\nDefault: 300 seconds.",
+      "nl": "Aantal seconden tussen het opvragen van een status update aan het apparaat, 0 zal polling uitschakelen.\nBereik: 0 - 7200.\nStandaard waarde: 300 seconden."
+    }
+  }
+]

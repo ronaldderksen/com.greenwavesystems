@@ -1,0 +1,41 @@
+{
+  "id": "com.greenwavesystems",
+  "name": {
+    "en": "Greenwave Systems",
+    "nl": "Greenwave Systems"
+  },
+  "version": "1.1.1",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "author": {
+    "name": "Athom B.V.",
+    "email": "info@athom.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Rex Markesteijn",
+        "email": "rmarkesteijn79@gmail.com"
+      },
+      {
+        "name": "Jelger Haanstra",
+        "email": "homey@solidewebservices.com"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
+      }
+    ]
+  },
+  "category": [
+    "appliances"
+  ],
+  "description": {
+    "en": "Drivers for Greenwave Systems devices",
+    "nl": "Drivers voor Greenwave Systems apparaten"
+  },
+  "images": {
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  }
+}
